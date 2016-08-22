@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js" charset="utf-8"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.js" charset="utf-8"></script>
+		<script type="text/javascript" src="javascript/geodraw.js"></script>
+	</head>
+
+	<body>
+		<div id="information"></div>
+		<div id="content"></div>
+		<script type="text/javascript">
+			d3.json("data/world_countries.json", drawGeoData);
+		</script>
+	</body>
+
+</html>
