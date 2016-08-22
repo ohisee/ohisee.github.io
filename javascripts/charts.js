@@ -6,17 +6,6 @@ function drawCharts(data) {
 	var margin = 80;
 	var width = 1400;
 	var height = 400;
-	var datam = [{ "year": "1997", "campus": "San Jose", "attendance": "10" },
-		{ "year": "1997", "campus": "Sunnyvale", "attendance": "20" },
-		{ "year": "1998", "campus": "San Jose", "attendance": "20" },
-		{ "year": "1998", "campus": "Sunnyvale", "attendance": "20" },
-		{ "year": "1999", "campus": "San Jose", "attendance": "32" },
-		{ "year": "1999", "campus": "Sunnyvale", "attendance": "10" },
-		{ "year": "2000", "campus": "Sunnyvale", "attendance": "27" },
-		{ "year": "2000", "campus": "San Jose", "attendance": "19" },
-		{ "year": "2001", "campus": "San Jose", "attendance": "18" },
-		{ "year": "2001", "campus": "Sunnyvale", "attendance": "29" }
-	];
 
 	//debugger;
 	var div = d3.select("#content")
@@ -39,17 +28,6 @@ function drawCharts(data) {
 	chart.addSeries(null, dimple.plot.scatter);
 	chart.draw();
 	svg.selectAll("circle").style("fill", "#FF0000");
-
-	//debugger;
-	var pieSvg = d3.select("#pie")
-		.append("svg")
-		.attr("width", width - 880).attr("height", height);
-	var pieChart = new dimple.chart(pieSvg, datam);
-	pieChart.setBounds(20, 20, 460, 360);
-	pieChart.addMeasureAxis("p", "attendance");
-	pieChart.addSeries("campus", dimple.plot.pie);
-	pieChart.addLegend(400, 30, 100, 100, "left");
-	pieChart.draw();
 };
 
 /**
