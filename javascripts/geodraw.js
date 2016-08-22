@@ -266,7 +266,7 @@ function drawGeoData(geo_data) {
 			"stroke-width": 0.5
 		});
 
-	d3.tsv("./static/world_cup_geo.tsv", transformType, function(data) {
+	d3.tsv("data/world_cup_geo.tsv", transformType, function(data) {
 		plot_points(data, svg, projection)
 	});
 };
