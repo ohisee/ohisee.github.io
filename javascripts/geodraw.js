@@ -1,5 +1,5 @@
 /*
- *
+ * This is to draw GEO data.
  */
 
 /**
@@ -21,12 +21,43 @@ var circle_style = {
 };
 
 /**
+ * @param toolTip - tool tip div
+ * @param d - data
+ */
+var toolTipHtmlOver = function(toolTip, d) {
+	toolTip.transition()
+		.duration(200)
+		.style({ "opacity": 0.9 });
+	toolTip.html("<span><b style='padding-right: 5px'>" +
+			d.values["homeCountry"] +
+			"</b></span><br/>" +
+			"<span><b style='padding-right: 5px'>Attendance</b>" +
+			d.values["attendance"] +
+			"</span>")
+		.style({
+			"position": "absolute",
+			"left": (d3.event.pageX) + "px",
+			"top": (d3.event.pageY) + "px"
+		});
+};
+
+/**
+ * @param toolTip - tool tip div
+ */
+var toolTipHtmlOut = function(toolTip, d) {
+	toolTip.transition()
+		.duration(500)
+		.style({ "opacity": 0 });
+};
+
+/**
  * Plot data on map
  * @param data - JSON response data
  * @param svg - svg element for drawing
  * @param projection - project function
+ * @param toolTip = tool tip
  */
-function plot_points(data, svg, projection) {
+function plot_points(data, svg, projection, toolTip) {
 	var nested = d3.nest()
 		.key(function(d) {
 			return d['date'].getUTCFullYear();
@@ -49,17 +80,20 @@ function plot_points(data, svg, projection) {
 			});
 
 			var teams = d3.set();
+			var homeCountry = d3.set();
 
 			leaves.forEach(function(d) {
 				teams.add(d["team1"]);
 				teams.add(d["team2"]);
+				homeCountry.add(d["home"]);
 			});
 
 			return {
 				"attendance": total,
 				"x": center_x,
 				"y": center_y,
-				"teams": teams.values()
+				"teams": teams.values(),
+				"homeCountry": homeCountry.values()
 			};
 		})
 		.entries(data);
@@ -104,7 +138,13 @@ function plot_points(data, svg, projection) {
 		})
 		.attr("fill", "rgba(247, 148, 32, 0.7)")
 		.attr("stroke", "black")
-		.attr("stroke-width", 0.7);
+		.attr("stroke-width", 0.7)
+		.on("mouseover", function(d) {
+			toolTipHtmlOver(toolTip, d);
+		})
+		.on("mouseout", function(d) {
+			toolTipHtmlOut(toolTip, d);
+		});
 
 	// Update year
 	var update = function(year) {
@@ -133,6 +173,13 @@ function plot_points(data, svg, projection) {
 				return radius(d.values["attendance"]);
 			})
 			.style(circle_style);
+
+		circles.on("mouseover", function(d) {
+				toolTipHtmlOver(toolTip, d);
+			})
+			.on("mouseout", function(d) {
+				toolTipHtmlOut(toolTip, d);
+			});
 
 		var countries = filtered[0].values["teams"];
 
@@ -266,7 +313,20 @@ function drawGeoData(geo_data) {
 			"stroke-width": 0.5
 		});
 
+	var toolTip = d3.select("body")
+		.append("div")
+		.attr("class", "toolTip")
+		.style({
+			"opacity": 0,
+			"padding": "2px",
+			"pointer-events": "none",
+			"background": "rgb(255, 255, 230)",
+			"font-family": "Arial, Helvetica, sans-serif",
+			"font-size": "12px",
+			"border": "2px solid rgb(242, 242, 242)"
+		});
+
 	d3.tsv("data/world_cup_geo.tsv", transformType, function(data) {
-		plot_points(data, svg, projection)
+		plot_points(data, svg, projection, toolTip)
 	});
 };
