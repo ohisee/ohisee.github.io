@@ -152,7 +152,7 @@ function plot_points(data, svg, projection, toolTip) {
 			return new Date(d["key"]).getUTCFullYear() === year;
 		});
 
-		d3.select("span").text("World Cup Attendance of " + year);
+		d3.select("#information span").text("World Cup Attendance of " + year);
 
 		var circles = svg.selectAll("circle")
 			.data(filtered, key_function);
