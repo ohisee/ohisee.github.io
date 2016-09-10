@@ -2,7 +2,7 @@
  * This is config file.
  */
 requirejs.config({
-	baseUrl: "static/js",
+	baseUrl: "js",
 	paths: {
 		"jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min",
 		"underscore": "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min",
