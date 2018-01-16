@@ -77,6 +77,23 @@ $(document).ready(function () {
     }
   });
 
+  $('.js--form-messages-submit').click(function (event) {
+    event.preventDefault();
+    var msg = $('.js--form-messages');
+    var loader = $('.loader');
+    if (msg.css('display') === 'none') {
+      setTimeout(function () {
+        msg.css('display', 'block');
+        loader.css('display', 'none');
+      }, 2000);
+      loader.css('display', 'block');
+    }
+  });
+
+  $('.js--form-messages').click(function () {
+    $('.js--form-messages').fadeOut(1000);
+  });
+
   /** Address '.js--main-nav' slide toggle issue  */
   $(window).resize(function () {
     if ($('.mobile-nav-icon').css('display') === 'none') {

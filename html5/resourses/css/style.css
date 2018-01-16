@@ -567,13 +567,13 @@ input[type=checkbox] {
 
 .map-contact-section {
   width: 100%;
-  height: 560px;
+  height: 630px;
   position: relative;
 }
 
 .map-in-contact-form {
   width: 100%;
-  height: 560px;
+  height: 630px;
   position: relative;
   z-index: 0;
 }
@@ -585,8 +585,26 @@ input[type=checkbox] {
   right: 0;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 10;
-  height: 560px;
+  height: 630px;
   padding-top: 40px;
+}
+
+.form-messages {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  color: #333333;
+  display: none
+}
+
+.success {
+  background-color: rgba(38, 191, 69, 0.8);
+}
+
+.error {
+  background-color: rgba(191, 38, 51, 0.8);
 }
 
 /* -------------------------------------------------- */

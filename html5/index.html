@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="./vendors/css/animate.min.css">
   <link rel="stylesheet" type="text/css" href="./resourses/css/style.css">
   <link rel="stylesheet" type="text/css" href="./resourses/css/queries.css">
+  <link rel="stylesheet" type="text/css" href="./resourses/css/spinner.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
   <title>HTML 5 CSS 3 Project</title>
 
@@ -393,6 +394,12 @@
       <div class="row">
         <form method="post" action="#" class="contact-form">
           <div class="row">
+            <div class="form-messages success js--form-messages">
+              Thank you! Your message has been sent.
+            </div>
+            <div class="loader"></div>
+          </div>
+          <div class="row">
             <div class="col span-1-of-3">
               <label for="name">Name</label>
             </div>
@@ -441,7 +448,7 @@
             <div class="col span-1-of-3">
               <label>&nbsp;</label>
             </div>
-            <div class="col span-2-of-3">
+            <div class="col span-2-of-3 js--form-messages-submit">
               <input type="submit" value="Send it!">
             </div>
           </div>
