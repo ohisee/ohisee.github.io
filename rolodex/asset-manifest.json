@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/rolodex/static/css/main.8457e9a4.chunk.css",
+    "main.js": "/rolodex/static/js/main.1bb5bd44.chunk.js",
+    "main.js.map": "/rolodex/static/js/main.1bb5bd44.chunk.js.map",
+    "runtime-main.js": "/rolodex/static/js/runtime-main.e0da3420.js",
+    "runtime-main.js.map": "/rolodex/static/js/runtime-main.e0da3420.js.map",
+    "static/js/2.215c97a7.chunk.js": "/rolodex/static/js/2.215c97a7.chunk.js",
+    "static/js/2.215c97a7.chunk.js.map": "/rolodex/static/js/2.215c97a7.chunk.js.map",
+    "index.html": "/rolodex/index.html",
+    "precache-manifest.78bc131a2556fbe14557f020ab6b4628.js": "/rolodex/precache-manifest.78bc131a2556fbe14557f020ab6b4628.js",
+    "service-worker.js": "/rolodex/service-worker.js",
+    "static/css/main.8457e9a4.chunk.css.map": "/rolodex/static/css/main.8457e9a4.chunk.css.map",
+    "static/js/2.215c97a7.chunk.js.LICENSE.txt": "/rolodex/static/js/2.215c97a7.chunk.js.LICENSE.txt",
+    "static/media/1.png": "/rolodex/static/media/1.0edc7548.png",
+    "static/media/10.png": "/rolodex/static/media/10.ebf120cf.png",
+    "static/media/2.png": "/rolodex/static/media/2.ce05a341.png",
+    "static/media/3.png": "/rolodex/static/media/3.d5cd9590.png",
+    "static/media/4.png": "/rolodex/static/media/4.64a79987.png",
+    "static/media/5.png": "/rolodex/static/media/5.3c592722.png",
+    "static/media/6.png": "/rolodex/static/media/6.9edd14c8.png",
+    "static/media/7.png": "/rolodex/static/media/7.ab4bb55e.png",
+    "static/media/8.png": "/rolodex/static/media/8.308fe317.png",
+    "static/media/9.png": "/rolodex/static/media/9.f9da866f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e0da3420.js",
+    "static/js/2.215c97a7.chunk.js",
+    "static/css/main.8457e9a4.chunk.css",
+    "static/js/main.1bb5bd44.chunk.js"
+  ]
+}
